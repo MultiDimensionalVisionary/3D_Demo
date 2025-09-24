@@ -1,7 +1,10 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.150.0/examples/jsm/controls/OrbitControls.js";
+import { OrbitControls } from "./lib/OrbitControls.js";
 
 console.log("Three.js revision:", THREE.REVISION);
+
+// rest of the cube test code...
+
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);

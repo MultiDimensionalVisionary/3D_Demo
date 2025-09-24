@@ -1,6 +1,7 @@
 // Import modern ES modules
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.module.js";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/controls/OrbitControls.js";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.module.js";
+import { OrbitControls } from "./lib/OrbitControls.js";
+// import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/controls/OrbitControls.js";
 
 let scene, camera, renderer, controls, sphere, textureLoader;
 
