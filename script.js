@@ -6,10 +6,10 @@ let scene, camera, renderer, controls, sphere, textureLoader;
 
 function init() {
   // Scene
-  scene = new THREE.Scene();
+  const scene = new THREE.Scene();
 
   // Camera
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.set(0, 0, 0.1);
 
   // Renderer
@@ -34,8 +34,8 @@ function init() {
 
   // Dropdown options
   const images = [
-    { file: "images/pano1.jpg", name: "Panorama 1" },
-    { file: "images/pano2.jpg", name: "Panorama 2" }
+    { file: "images/Frame_2830.jpg", name: "Panorama 1" },
+    { file: "images/Frame_2858.jpg", name: "Panorama 2" }
   ];
   const selector = document.getElementById("imageSelector");
 
