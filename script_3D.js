@@ -81,6 +81,9 @@ function loadAsset(asset) {
     scene.add(sphere);
     currentAsset = sphere;
     camera.position.set(0, 0, 0.1);
+	controls.enableZoom = true;   // allow zoom
+    controls.minDistance = 0.1;   // prevent infinite zoom in
+    controls.maxDistance = 10;    // stop zooming out of sphere
   } else if (asset.type === "model") {
     if (asset.mtl) {
       const mtlLoader = new MTLLoader();
