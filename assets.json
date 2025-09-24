@@ -1,0 +1,9 @@
+{
+  "panoramas": [
+    { "file": "images/pano1.jpg", "name": "Panorama 1" },
+    { "file": "images/pano2.jpg", "name": "Panorama 2" }
+  ],
+  "models": [
+    { "obj": "models/office.obj", "mtl": "models/office.mtl", "name": "Office Scan" }
+  ]
+}
