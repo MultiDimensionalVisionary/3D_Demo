@@ -10,7 +10,7 @@ async function init() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.getElementById("viewer").appendChild(renderer.domElement);
 
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
 
   textureLoader = new THREE.TextureLoader();
