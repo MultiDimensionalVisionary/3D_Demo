@@ -1,3 +1,7 @@
+// Import modern ES modules
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.module.js";
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/controls/OrbitControls.js";
+
 let scene, camera, renderer, controls, sphere, textureLoader;
 
 function init() {
@@ -5,13 +9,8 @@ function init() {
   scene = new THREE.Scene();
 
   // Camera
-  camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-  camera.position.set(0, 0, 0.1); // slightly offset so not at exact center
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 0, 0.1);
 
   // Renderer
   renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -19,21 +18,21 @@ function init() {
   document.getElementById("viewer").appendChild(renderer.domElement);
 
   // Controls
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls = new OrbitControls(camera, renderer.domElement);
   controls.enableZoom = false;
   controls.enablePan = false;
 
   // Texture loader
   textureLoader = new THREE.TextureLoader();
 
-  // Sphere geometry (inverted so we are inside it)
+  // Sphere geometry
   const geometry = new THREE.SphereGeometry(500, 60, 40);
   geometry.scale(-1, 1, 1);
   const material = new THREE.MeshBasicMaterial();
   sphere = new THREE.Mesh(geometry, material);
   scene.add(sphere);
 
-  // Populate dropdown manually
+  // Dropdown options
   const images = [
     { file: "images/pano1.jpg", name: "Panorama 1" },
     { file: "images/pano2.jpg", name: "Panorama 2" }
@@ -48,15 +47,13 @@ function init() {
     selector.appendChild(opt);
   });
 
-  // Load first panorama
+  // Load first
   loadPanorama(images[0].file);
 
-  // Dropdown change
   selector.addEventListener("change", (e) => {
     loadPanorama(e.target.value);
   });
 
-  // Handle resize
   window.addEventListener("resize", onWindowResize);
 
   animate();
