@@ -1,9 +1,9 @@
 {
   "panoramas": [
-    { "file": "images/pano1.jpg", "name": "Panorama 1" },
-    { "file": "images/pano2.jpg", "name": "Panorama 2" }
+    { "file": "images/Frame_2830.jpg", "name": "Panorama 1" },
+    { "file": "images/Frame_2858.jpg", "name": "Panorama 2" }
   ],
   "models": [
-    { "obj": "models/office.obj", "mtl": "models/office.mtl", "name": "Office Scan" }
+    { "obj": "models/Door.obj", "mtl": "models/Door.mtl", "name": "Door Scan" }
   ]
 }
