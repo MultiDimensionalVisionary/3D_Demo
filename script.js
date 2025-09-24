@@ -60,10 +60,19 @@ function init() {
 }
 
 function loadPanorama(path) {
-  textureLoader.load(path, (texture) => {
-    sphere.material.map = texture;
-    sphere.material.needsUpdate = true;
-  });
+  console.log("Loading panorama:", path);
+  textureLoader.load(
+    path,
+    (texture) => {
+      console.log("Loaded successfully:", path);
+      sphere.material.map = texture;
+      sphere.material.needsUpdate = true;
+    },
+    undefined,
+    (err) => {
+      console.error("Error loading", path, err);
+    }
+  );
 }
 
 function onWindowResize() {
