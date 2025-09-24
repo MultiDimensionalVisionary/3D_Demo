@@ -1,5 +1,5 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.module.js";
-import { OrbitControls } from "./lib/OrbitControls.js";
+import { OrbitControls } from "./lib/OrbitControls.js?v=202509252";
 
 console.log("Three.js revision:", THREE.REVISION);
 
