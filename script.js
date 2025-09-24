@@ -65,6 +65,7 @@ function loadAsset(asset) {
     geometry.scale(-1, 1, 1);
     const material = new THREE.MeshBasicMaterial();
     textureLoader.load(asset.file, tex => {
+      console.log("Loaded panorama:", asset.file, tex.image.width + "x" + tex.image.height);
       material.map = tex;
       material.needsUpdate = true;
     });
@@ -79,14 +80,28 @@ function loadAsset(asset) {
       const objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
       objLoader.load(asset.obj, obj => {
-        obj.scale.set(0.01, 0.01, 0.01); // adjust size
+        // Center + scale model
+        const box = new THREE.Box3().setFromObject(obj);
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+        console.log("Model loaded:", asset.obj, "size:", size, "center:", center);
+
+        obj.position.sub(center);
+
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scaleFactor = 2 / maxDim;
+        obj.scale.multiplyScalar(scaleFactor);
+
+        camera.position.set(0, 0, maxDim * 1.5);
+        controls.update();
+
         scene.add(obj);
         currentAsset = obj;
-        camera.position.set(0, 0, 2);
       });
     });
   }
 }
+
 
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
