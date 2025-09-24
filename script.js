@@ -1,6 +1,8 @@
 // Import modern ES modules
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.module.js";
 import { OrbitControls } from "./lib/OrbitControls.js";
+import { OBJLoader } from "./lib/OBJLoader.js";
+import { MTLLoader } from "./lib/MTLLoader.js";
 // import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.149.0/examples/jsm/controls/OrbitControls.js";
 
 let scene, camera, renderer, controls, sphere, textureLoader;
@@ -36,7 +38,8 @@ function init() {
   // Dropdown options
   const images = [
     { file: "images/Frame_2830.png", name: "Panorama 1" },
-    { file: "images/Frame_2858.JPG", name: "Panorama 2" }
+    { file: "images/Frame_2858.jpg", name: "Panorama 2" },
+	{ type: "model", obj: "models/Door.obj", mtl: "models/Door.mtl", name: "Door Scan" }
   ];
   const selector = document.getElementById("imageSelector");
 
