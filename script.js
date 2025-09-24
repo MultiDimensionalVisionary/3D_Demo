@@ -35,8 +35,8 @@ function init() {
 
   // Dropdown options
   const images = [
-    { file: "images/Frame_2830.jpg", name: "Panorama 1" },
-    { file: "images/Frame_2858.jpg", name: "Panorama 2" }
+    { file: "images/Frame_2830.png", name: "Panorama 1" },
+    { file: "images/Frame_2858.JPG", name: "Panorama 2" }
   ];
   const selector = document.getElementById("imageSelector");
 
