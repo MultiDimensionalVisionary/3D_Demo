@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>360° Panorama Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="menu">
-    <select id="imageSelector"></select>
+    <label for="imageSelector" class="visually-hidden">Choose Panorama</label>
+    <select id="imageSelector" title="Choose Panorama"></select>
   </div>
   <div id="viewer"></div>
 
   <!-- Three.js (r149, stable for non-module OrbitControls) -->
-  <script type="module" src="script.js?v=1"></script>
-  <script type="module" src="script.js?v=2"></script>
-  <script type="module" src="script.js?v=3"></script>
+  <script type="module" src="script.js?v=20250924"></script>
 
 </body>
 </html>
