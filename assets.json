@@ -4,7 +4,6 @@
     { "file": "images/Frame_2858.jpg", "name": "Panorama 2" }
   ],
   "models": [
-    { "obj": "models/Door.obj", "mtl": "models/Door.mtl", "name": "Door Scan" },
-	{ "obj": "models/Building.obj", "name": "Building Scan" }
+    { "obj": "models/Door.obj", "mtl": "models/Door.mtl", "name": "Door Scan" }
   ]
 }

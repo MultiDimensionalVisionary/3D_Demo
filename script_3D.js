@@ -30,7 +30,7 @@ function init() {
     { type: "panorama", file: "images/Frame_2830.png", name: "Panorama 1" },
     { type: "panorama", file: "images/Frame_2858.jpg", name: "Panorama 2" },
     { type: "model", obj: "models/Door.obj", mtl: "models/Door.mtl", name: "Door Scan" },
-	{ type: "model", obj: "models/Building.obj", name: "Building Scan" }
+	// { type: "model", obj: "models/Building.obj", name: "Building Scan" }
   ];
 
   const selector = document.getElementById("assetSelector");
