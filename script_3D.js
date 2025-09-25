@@ -52,6 +52,16 @@ function init() {
   animate();
 }
 
+// Fake zoom for panoramas by changing camera FOV
+window.addEventListener("wheel", e => {
+  if (currentAsset && currentAsset.geometry && currentAsset.geometry.type === "SphereGeometry") {
+    camera.fov += e.deltaY * 0.05; // scroll changes FOV
+    camera.fov = THREE.MathUtils.clamp(camera.fov, 30, 100); // limits
+    camera.updateProjectionMatrix();
+  }
+});
+
+
 function clearScene() {
   if (currentAsset) {
     scene.remove(currentAsset);
