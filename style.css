@@ -21,8 +21,8 @@ body, html {
 .logo {
   width: 50%;
   max-width: 700px;
-  transition: transform 1.5s ease-in-out;
-  transform-origin: 10% center; /* Focus zoom near circle */
+  transition: transform 2.0s ease-in-out;
+  transform-origin: 0% center; /* Focus zoom near circle */
 }
 
 .enter-btn {
@@ -35,7 +35,7 @@ body, html {
   font-size: 1.1rem;
   cursor: pointer;
   letter-spacing: 2px;
-  transition: background 0.3s;
+  transition: background 0.1s;
 }
 .enter-btn:hover {
   background: #009f8a;
@@ -47,7 +47,7 @@ body, html {
   left: 50%;
   width: 0;
   height: 0;
-  background: black;
+  background: #00bfa6;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
