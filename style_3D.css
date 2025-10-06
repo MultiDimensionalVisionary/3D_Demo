@@ -1,0 +1,27 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+#viewer {
+  width: 100%;
+  height: 100%;
+}
+
+#menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background: rgba(0,0,0,0.6);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+#menu select {
+  font-size: 14px;
+  padding: 4px;
+}

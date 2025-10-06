@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>360° Panorama Viewer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Portal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="menu">
-    <label for="imageSelector" class="visually-hidden">Choose One</label>
-    <select id="assetSelector" title="Choose One"></select>
-
+  <div class="container">
+    <img src="Media.png" alt="Logo" class="logo" id="logo">
+    <button id="enterBtn" class="enter-btn">ENTER</button>
   </div>
-  <div id="viewer"></div>
 
-  <!-- Three.js (r149, stable for non-module OrbitControls) -->
-  <script type="module" src="script_3D.js?v=5"></script>
+  <div id="reveal" class="reveal"></div>
 
+  <script src="script.js"></script>
 </body>
 </html>
