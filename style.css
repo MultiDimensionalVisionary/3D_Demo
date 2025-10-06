@@ -22,7 +22,9 @@ body, html {
   width: 50%;
   max-width: 700px;
   transition: transform 2.0s ease-in-out;
-  transform-origin: 0% center; /* Focus zoom near circle */
+  /* transform-origin: 0% center; /* Focus zoom near circle */
+  transform-origin: center center; /* will be set dynamically */
+
 }
 
 .enter-btn {
