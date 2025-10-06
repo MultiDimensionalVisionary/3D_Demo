@@ -27,7 +27,7 @@ function init() {
 
   // Assets
   const assets = [
-    { type: "panorama", file: "images/Frame_2830.png", name: "Panorama 1" },
+    { type: "panorama", file: "images/Frame_2830.png", name: "Indoor Panorama" },
     { type: "panorama", file: "images/Frame_2858.jpg", name: "Outdoor Panorama" },
     { type: "model", obj: "models/Door.obj", mtl: "models/Door.mtl", name: "Door Scan" },
 	// { type: "model", obj: "models/Building.obj", name: "Building Scan" }
