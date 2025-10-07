@@ -1,6 +1,6 @@
 {
   "panoramas": [
-    { "file": "images/Frame_2830.png", "name": "Indoor Panorama" },
+    { "file": "images/indoor.png", "name": "Indoor Panorama" },
     { "file": "images/Frame_2858.jpg", "name": "Outdoor Panorama" }
   ],
   "models": [
