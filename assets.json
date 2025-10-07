@@ -5,7 +5,7 @@
   ],
   "models": [
     { "obj": "models/Door.obj", "mtl": "models/Door.mtl", "name": "Door Scan" },
-	{ "obj": "models/cloud.ply", "name": "Office Point Cloud" }
+	{ "obj": "models/reduced_100MB_4.ply", "name": "Office Point Cloud" }
 
   ]
 }

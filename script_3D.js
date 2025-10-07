@@ -31,7 +31,7 @@ function init() {
     { type: "panorama", file: "images/indoor.png", name: "Indoor Panorama" },
     { type: "panorama", file: "images/Frame_2858.jpg", name: "Outdoor Panorama" },
     { type: "model", obj: "models/Door.obj", mtl: "models/Door.mtl", name: "Door Scan" },
-	{ type: "pointcloud", file: "models/office_flat.ply", name: "Office Point Cloud" }
+	{ type: "pointcloud", file: "models/reduced_100MB_4.ply", name: "Office Point Cloud" }
 
 	// { type: "model", obj: "models/Building.obj", name: "Building Scan" }
   ];
