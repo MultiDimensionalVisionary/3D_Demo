@@ -121,18 +121,31 @@ function loadAsset(asset) {
       loadObjWithoutMtl(asset.obj);
     }
   } else if (asset.type === "pointcloud") {
-	const loader = new PLYLoader();
-	loader.load(asset.file, geometry => {
-	geometry.computeBoundingBox();
-	geometry.center();
-	const material = new THREE.PointsMaterial({
-	  size: 0.01,          // adjust for density
-	  vertexColors: true,  // use per-point colors if present
-	});
-	const points = new THREE.Points(geometry, material);
-	fitModelToView(points, asset.file);
-	});
-  }
+		const loader = new PLYLoader();
+		loader.load(asset.file, geometry => {
+		geometry.computeBoundingBox();
+		geometry.center();
+
+		const box = geometry.boundingBox;
+		const maxDim = Math.max(
+		  box.max.x - box.min.x,
+		  box.max.y - box.min.y,
+		  box.max.z - box.min.z
+		);
+
+		// Auto point size based on model scale
+		const pointSize = maxDim / 5000;  // tweak denominator for density
+
+		const material = new THREE.PointsMaterial({
+		  size: pointSize,
+		  vertexColors: true,
+		  sizeAttenuation: true,
+		});
+
+		const points = new THREE.Points(geometry, material);
+		fitModelToView(points, asset.file);
+		});
+	}
 }
 
 function loadObjWithoutMtl(objPath) {
