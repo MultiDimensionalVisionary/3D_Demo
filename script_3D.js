@@ -138,7 +138,7 @@ function loadAsset(asset) {
 		geometry.scale(scaleFactor, scaleFactor, scaleFactor);
 
 		// Auto point size — relative to scaled model
-		const pointSize = 0.003; // fixed baseline looks better after scaling
+		const pointSize = 0.005; // fixed baseline looks better after scaling
 
 		const material = new THREE.PointsMaterial({
 		  size: pointSize,
