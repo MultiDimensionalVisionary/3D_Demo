@@ -134,7 +134,7 @@ function loadAsset(asset) {
 		);
 
 		// Auto point size based on model scale
-		const pointSize = maxDim / 5000;  // tweak denominator for density
+		const pointSize = maxDim / 5; //000;  // tweak denominator for density
 
 		const material = new THREE.PointsMaterial({
 		  size: pointSize,
