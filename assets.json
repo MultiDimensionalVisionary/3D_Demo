@@ -4,6 +4,8 @@
     { "file": "images/Frame_2858.jpg", "name": "Outdoor Panorama" }
   ],
   "models": [
-    { "obj": "models/Door.obj", "mtl": "models/Door.mtl", "name": "Door Scan" }
+    { "obj": "models/Door.obj", "mtl": "models/Door.mtl", "name": "Door Scan" },
+	{ "obj": "models/cloud.ply", "name": "Office Point Cloud" }
+
   ]
 }

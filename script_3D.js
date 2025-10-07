@@ -2,6 +2,7 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.m
 import { OrbitControls } from "./lib/OrbitControls.js";
 import { OBJLoader } from "./lib/OBJLoader.js";
 import { MTLLoader } from "./lib/MTLLoader.js";
+import { PLYLoader } from "./lib/PLYLoader.js";
 
 let scene, camera, renderer, controls, currentAsset, textureLoader;
 
@@ -30,6 +31,8 @@ function init() {
     { type: "panorama", file: "images/Frame_2830.png", name: "Indoor Panorama" },
     { type: "panorama", file: "images/Frame_2858.jpg", name: "Outdoor Panorama" },
     { type: "model", obj: "models/Door.obj", mtl: "models/Door.mtl", name: "Door Scan" },
+	{ type: "pointcloud", file: "models/office_flat.ply", name: "Office Point Cloud" }
+
 	// { type: "model", obj: "models/Building.obj", name: "Building Scan" }
   ];
 
@@ -117,6 +120,18 @@ function loadAsset(asset) {
     } else {
       loadObjWithoutMtl(asset.obj);
     }
+  } else if (asset.type === "pointcloud") {
+	const loader = new PLYLoader();
+	loader.load(asset.file, geometry => {
+	geometry.computeBoundingBox();
+	geometry.center();
+	const material = new THREE.PointsMaterial({
+	  size: 0.01,          // adjust for density
+	  vertexColors: true,  // use per-point colors if present
+	});
+	const points = new THREE.Points(geometry, material);
+	fitModelToView(points, asset.file);
+	});
   }
 }
 
