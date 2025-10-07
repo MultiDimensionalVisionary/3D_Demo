@@ -121,8 +121,8 @@ function loadAsset(asset) {
       loadObjWithoutMtl(asset.obj);
     }
   } else if (asset.type === "pointcloud") {
-		const loader = new PLYLoader();
-		loader.load(asset.file, geometry => {
+	  const loader = new PLYLoader();
+	  loader.load(asset.file, geometry => {
 		geometry.computeBoundingBox();
 		geometry.center();
 
@@ -133,19 +133,29 @@ function loadAsset(asset) {
 		  box.max.z - box.min.z
 		);
 
-		// Auto point size based on model scale
-		const pointSize = maxDim / 5; //000;  // tweak denominator for density
+		// Scale geometry first (so fitModelToView sees correct size)
+		const scaleFactor = 2 / maxDim;
+		geometry.scale(scaleFactor, scaleFactor, scaleFactor);
+
+		// Auto point size — relative to scaled model
+		const pointSize = 0.003; // fixed baseline looks better after scaling
 
 		const material = new THREE.PointsMaterial({
 		  size: pointSize,
-		  vertexColors: true,
+		  vertexColors: geometry.hasAttribute("color"),
 		  sizeAttenuation: true,
 		});
 
+		// Optional: color fallback if PLY has no colors
+		if (!geometry.hasAttribute("color")) {
+		  material.color = new THREE.Color(0xffffff);
+		}
+
 		const points = new THREE.Points(geometry, material);
 		fitModelToView(points, asset.file);
-		});
+	  });
 	}
+
 }
 
 function loadObjWithoutMtl(objPath) {
